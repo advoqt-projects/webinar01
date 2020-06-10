@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Whatever</title>
+    <link rel="stylesheet" href="animate.min.css">
+    <meta name="author" content="Raul Bojalil" />
+    <style>
+
+            @import url(fonts.css);
+
+            .fallback-message {
+                font-family: sans-serif;
+                line-height: 1.3;
+
+                width: 780px;
+                padding: 10px 10px 0;
+                margin: 20px auto;
+
+                border: 1px solid #E4C652;
+                border-radius: 10px;
+                background: #EEDC94;
+            }
+
+            .fallback-message p {
+                margin-bottom: 10px;
+            }
+
+            .impress-supported .fallback-message {
+                display: none;
+            }
+
+                body {
+                    font-family: 'PT Sans', sans-serif;
+                    min-height: 740px;
+
+                    background: rgb(254,1,1);
+                    background: linear-gradient(176deg, rgba(69,69,69,1) 0%, rgba(255,255,255,1) 100%);
+
+                    /* background: rgb(254,1,1);
+                        background: linear-gradient(176deg, rgba(254,1,1,0.8) 0%, rgba(64,63,63,1) 100%);
+                        color: white;*/
+                    color: rgba(254,1,1,0.8);
+                }
+
+            .step {
+                position: relative;
+                display: block;
+
+                width: 900px;
+                height: 700px;
+                margin: 20px auto;
+                padding: 40px 60px;
+
+                text-shadow: 0 2px 2px rgba(0, 10, 0, .5);
+
+                font-family: 'Open Sans', Arial, sans-serif;
+                font-size: 40px;
+                letter-spacing: -1px;
+
+            }
+            /*
+                Make inactive steps a little bit transparent.
+            */
+            .impress-enabled .step {
+                margin: 0;
+                opacity: 0.3;
+                transition:         opacity 1s;
+            }
+
+            .impress-enabled .step.active { opacity: 1 }
+
+            h1, 
+            h2, 
+            h3 {
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                margin: 0.7em;
+            }
+
+            li {
+                margin: 0.2em;    
+            }
+
+            /* Highlight.js used for coloring pre > code blocks. */
+            pre > code {
+                font-size: 14px;
+                text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+
+            /* Inline code, no Highlight.js */
+            code {
+                font-family: "Cutive mono","Courier New", monospace;
+            }
+
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                padding: 0 0.1em;
+                background: rgba(200,200,200,0.3);
+                text-shadow: -1px 1px 2px rgba(100,100,100,0.9);
+                border-radius: 0.2em;
+                border-bottom: 1px solid rgba(100,100,100,0.4);
+                border-left:   1px solid rgba(100,100,100,0.4);
+
+                transition:         0.5s;
+            }
+            a:hover,
+            a:focus {
+                background: rgba(200,200,200,1);
+                text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+            }
+
+            blockquote {
+                font-family: 'PT Serif';
+                font-style: italic;
+                font-weight: 400;    
+            }
+
+            em {
+                text-shadow: 0 2px 2px rgba(0, 0, 0, .3);    
+            }
+
+            strong {
+                text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+            }
+
+            q {
+                font-family: 'PT Serif';
+                font-style: italic;
+                font-weight: 400;    
+                text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+            }
+
+            strike {
+                opacity: 0.7;
+            }
+
+            small {
+                font-size: 0.4em;
+            }
+
+            img {
+                width: 300px
+            }
+
+            /****************** Background images **********************************************/
+
+
+            img.bg {
+                position: fixed;
+                z-index: -100;
+                opacity: 0;
+                height: 50%;
+                width: auto;
+                transition:  opacity 2s;
+            }
+
+            
+            
+#image-3 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-3 #image-3 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-4 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-4 #image-4 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-5 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-5 #image-5 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-6 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-6 #image-6 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-7 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-7 #image-7 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-8 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-8 #image-8 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-9 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-9 #image-9 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-10 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-10 #image-10 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-11 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-11 #image-11 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-12 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-12 #image-12 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-13 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-13 #image-13 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-14 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-14 #image-14 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-15 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-15 #image-15 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-16 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-16 #image-16 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-17 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-17 #image-17 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-20 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-20 #image-20 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+
+#image-22 {
+    left: 0px;
+    bottom: 0px;
+}
+
+body.impress-on-slide-22 #image-22 {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+           
+
+            #aside-image {
+                left: 0px;
+                bottom: 0px;
+            }
+
+            body.impress-on-aside #aside-image {
+                opacity: 0.7;
+                transition:  opacity 2s;
+            }
+
+
+            /*************** Slide specific things ****************************/
+
+            #image-credits {
+                color: #779988;
+            }
+    </style>
+</head>
+<body class="impress-not-supported">
+
+<img src="images/cyberwarrior_white.png" style="top: 20px; right: 20px; position: absolute"/>
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+
+<img id="image-3" class="bg" src="images/fall.gif">
+
+
+<img id="image-4" class="bg" src="images/Q8ad6Zlg4FjS5LVPxK.gif">
+
+
+<img id="image-5" class="bg" src="images/111ebonMs90YLu.gif">
+
+
+<img id="image-6" class="bg" src="images/gJwndwkdZ2umk.gif">
+
+
+<img id="image-7" class="bg" src="images/Su1AnZTP8pntclj0gU.gif">
+
+
+<img id="image-8" class="bg" src="images/findyou.gif">
+
+
+<img id="image-9" class="bg" src="images/home.gif">
+
+
+<img id="image-10" class="bg" src="images/way.gif">
+
+
+<img id="image-11" class="bg" src="images/pointer.gif">
+
+
+<img id="image-12" class="bg" src="images/finger.gif">
+
+
+<img id="image-13" class="bg" src="images/running.gif">
+
+
+<img id="image-14" class="bg" src="images/health.gif">
+
+
+<img id="image-15" class="bg" src="images/infinite.gif">
+
+
+<img id="image-16" class="bg" src="images/tellmehow.gif">
+
+
+<img id="image-17" class="bg" src="images/l4JyV2uR2YwqqsFR6.gif">
+
+
+<img id="image-20" class="bg" src="images/coins.gif">
+
+
+<img id="image-22" class="bg" src="images/thanks.gif">
+
+
+<div id="impress" data-transition-duration="1000">
+
+   
+<div id="slide-1" class="step" data-rotate="30" data-rel-x="12" data-rel-y="34" data-rel-z="34" data-scale="1">
+    <div style="text-align: center">
+   <img style="width: 700px" src="images/cyberwarrior_white.png"/>
+      
+ </div>
+        
+   
+   
+<h1>Hacking Videogames</h1>
+
+      
+<p>A CyberWarrior Webinar</p>
+</div>
+
+
+<div id="slide-2" class="step" data-rotate="222" data-rel-x="575" data-rel-y="1699" data-rel-z="1699" data-scale="1">
+    
+   
+   
+<h1>A Summer Camp that Promotes Hacking​ &​ Video Games?</h1>
+
+      
+<p>Yes!  They are Fundamental Skills to Understanding Cybersecurity and the Fastest Growing Jobs Sector in the World!</p>
+</div>
+
+
+<div id="slide-3" class="step" data-rotate="10" data-rel-x="-3531" data-rel-y="-905" data-rel-z="-905" data-scale="1">
+    <p style="font-size: 80px"><i>"Everything’s fun and games until somebody starts hacking them"</i></p>
+
+<p style="font-size: 80px">- Somebody not me</p>
+
+
+
+</div>
+
+
+<div id="slide-4" class="step" data-rotate="25" data-rel-x="-22" data-rel-y="2690" data-rel-z="2690" data-scale="1">
+    <p style="font-size: 80px">
+Videogames are everywhere and they are a lot of fun but do you know <span style="font-size: 140px"> how they work?</span>
+</p>
+</div>
+
+
+<div id="slide-5" class="step" data-rotate="59" data-rel-x="-886" data-rel-y="1058" data-rel-z="1058" data-scale="1">
+    <p style="font-size: 60px">
+In order to hack videogames you will need to know how they work. 
+To get you up to speed, we will be reviewing some important gaming concepts.  <span style="font-size: 130px">Ready?, let’s go!</span>
+
+</p>
+</div>
+
+
+<div id="slide-6" class="step" data-rotate="30" data-rel-x="1631" data-rel-y="-4594" data-rel-z="-4594" data-scale="1">
+    <p style="font-size: 50px">Let's talk about memory first, specifically about  <span style="font-size: 120px">computer memory</span>. So what's that? Well memory is any physical device capable of <b>storing information temporarily</b></p>
+</div>
+
+
+<div id="slide-7" class="step" data-rotate="12" data-rel-x="2037" data-rel-y="-3104" data-rel-z="-3104" data-scale="1">
+    <p style="font-size: 60px">One of the most common devices for storing working data is the RAM, or  <span style="font-size: 120px"><i>Random Access Memory</i></span></p>
+</div>
+
+
+<div id="slide-8" class="step" data-rotate="180" data-rel-x="1839" data-rel-y="-4170" data-rel-z="-4170" data-scale="1">
+    <p style="font-size: 60px">But why is it called <i>Random</i>?, because <b style="font-size: 90px">data can be written or read in any order</b>. This means that you need a way to locate data within the memory</p>
+</div>
+
+
+<div id="slide-9" class="step" data-rotate="0" data-rel-x="1081" data-rel-y="-3766" data-rel-z="-3766" data-scale="1">
+    <p style="font-size: 60px">Let me introduce you to,  <span style="font-size: 100px">MEMORY ADDRESSES!</span>, think of them as your and your friend's home addresses!. They are used to locate data (homes) within the memory (your neighborhood)</p>
+</div>
+
+
+<div id="slide-10" class="step" data-rotate="90" data-rel-x="-139" data-rel-y="1802" data-rel-z="1802" data-scale="1">
+    <p style="font-size: 90px">In other words, a memory address is a reference to a specific memory location</p>
+</div>
+
+
+<div id="slide-11" class="step" data-rotate="56" data-rel-x="-4778" data-rel-y="487" data-rel-z="487" data-scale="1">
+    <p style="font-size: 50px">But if data is stored in memory, where are memory addresses stored?. They are stored in what is known as a  <span style="font-size: 120px">pointer</span>.Think of a pointer as a piece of paper in which you write your home address, which is then used to locate your home.</p>
+</div>
+
+
+<div id="slide-12" class="step" data-rotate="30" data-rel-x="-3757" data-rel-y="-2438" data-rel-z="-2438" data-scale="1">
+    <p style="font-size: 60px">When you obtain the value stored at a location specified by the pointer, you are <span style="font-size: 100px">"dereferencing the pointer"</span></p>
+
+
+</div>
+
+
+<div id="slide-13" class="step" data-rotate="20" data-rel-x="812" data-rel-y="-447" data-rel-z="-447" data-scale="1">
+    
+<p style="font-size: 60px">
+Now that you know what memory is let me tell you that a game is like any other computer program. When you run a game, the operating system loads the game code into memory before running it
+</p> 
+</div>
+
+
+<div id="slide-14" class="step" data-rotate="45" data-rel-x="969" data-rel-y="3303" data-rel-z="3303" data-scale="1">
+    <p style="font-size: 60px">
+  Aside from the game code, memory can hold data like the amount of <b>health</b> and <b>money</b> of your character, these are also known as <b style="font-size: 120px">VARIABLES</b>
+</p> 
+</div>
+
+
+<div id="slide-15" class="step" data-rotate="285" data-rel-x="-3102" data-rel-y="-4895" data-rel-z="-4895" data-scale="1">
+    <p style="font-size: 60px">
+ If you know the location of these variables in memory, you will be able to <b style="font-size: 120px">modify</b> them!, <b style="font-size: 100px">Imagine having infinite health!</b> 
+</p> 
+</div>
+
+
+<div id="slide-16" class="step" data-rotate="224" data-rel-x="2406" data-rel-y="-1443" data-rel-z="-1443" data-scale="1">
+    <p style="font-size: 60px">
+If you have been paying attention so far, you already know that these locations are also known as <b style="font-size: 100px"> Memory Addresses </b>, but how do you get them?
+</p> 
+</div>
+
+
+<div id="slide-17" class="step" data-rotate="149" data-rel-x="4" data-rel-y="547" data-rel-z="547" data-scale="1">
+    <p style="font-size: 120px">
+ The answer is 
+
+<span style="font-size: 150px">CHEAT ENGINE!</span>
+</p> 
+</div>
+
+
+<div id="slide-18" class="step" data-rotate="22" data-rel-x="38" data-rel-y="440" data-rel-z="440" data-scale="1">
+    <p style="font-size: 60px">
+  <a href="https://www.cheatengine.org/">Cheat Engine</a> is one of the most popular open source applications used to hack games. With it you can scan the memory, search for specific values in the memory and more!
+
+</p> 
+</div>
+
+
+<div id="slide-19" class="step" data-rotate="251" data-rel-x="1162" data-rel-y="2982" data-rel-z="2982" data-scale="1">
+    <p>
+
+Cheat Engine uses a trial an error approach for finding the addresses of the desired game values. You need to progressively filter the addresses until you find the correct ones
+
+<img style="margin-top: 40px; width: 700px" src="https://imag.malavida.com/mvimgbig/download-fs/cheat-engine-19953-6.jpg"/>
+
+</p>
+</div>
+
+
+<div id="slide-20" class="step" data-rotate="310" data-rel-x="-2217" data-rel-y="2597" data-rel-z="2597" data-scale="1">
+    <p style="font-size: 60px">Let's go through a simple example to get <span style="font-size: 120px">infinite coins</span> in a game. Ready?</p>
+</div>
+
+
+<div id="slide-21" class="step" data-rotate="329" data-rel-x="716" data-rel-y="1262" data-rel-z="1262" data-scale="1">
+    <p style="font-size: 200px">DEMO TIME</p>
+</div>
+
+
+<div id="slide-22" class="step" data-rotate="264" data-rel-x="-2199" data-rel-y="2492" data-rel-z="2492" data-scale="1">
+    <p style="font-size: 200px">Thank you!</p>
+</div>
+
+    
+</div>
+
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+
+<script type="text/javascript" src="impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
